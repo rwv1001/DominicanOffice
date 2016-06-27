@@ -1,0 +1,2442 @@
+  [1m[35m (393.4ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (367.4ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT DATABASE() as db[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT GET_LOCK('3580296477422488950', 0);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (3.0ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateUsers (20160626103644)
+  [1m[35m (366.4ms)[0m  [1m[35mCREATE TABLE `users` (`id` int AUTO_INCREMENT PRIMARY KEY, `person_id` varchar(255), `password_digest` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20160626103644')[0m
+  [1m[35m (16.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2016-06-26 10:38:48', '2016-06-26 10:38:48')[0m
+  [1m[35m (24.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT RELEASE_LOCK('3580296477422488950')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSHOW CREATE TABLE `users`[0m
+  [1m[35m (1.0ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'users'[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'DominicanOffice_development'
+  AND fk.table_name = 'users'
+[0m
+  [1m[35m (560.6ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (260.3ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT DATABASE() as db[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT GET_LOCK('3580296477422488950', 0);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (36.0ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateUsers (20160626103644)
+  [1m[35m (280.3ms)[0m  [1m[35mCREATE TABLE `users` (`id` int AUTO_INCREMENT PRIMARY KEY, `person_id` int, `password_digest` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (95.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20160626103644')[0m
+  [1m[35m (17.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2016-06-26 11:35:43', '2016-06-26 11:35:43')[0m
+  [1m[35m (21.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT RELEASE_LOCK('3580296477422488950')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSHOW CREATE TABLE `users`[0m
+  [1m[35m (1.0ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'users'[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'DominicanOffice_development'
+  AND fk.table_name = 'users'
+[0m
+Started GET "/" for 127.0.0.1 at 2016-06-26 12:36:14 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (2.0ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering C:/Ruby23/lib/ruby/gems/2.3.0/gems/railties-5.0.0.rc2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Ruby23/lib/ruby/gems/2.3.0/gems/railties-5.0.0.rc2/lib/rails/templates/rails/welcome/index.html.erb (34.0ms)
+Completed 200 OK in 380ms (Views: 190.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-26 16:33:14 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (79.1ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by ApplicationController#hello as HTML
+DEPRECATION WARNING: `render :text` is deprecated because it does not actually render a `text/plain` response. Switch to `render plain: 'plain text'` to render as `text/plain`, `render html: '<strong>HTML</strong>'` to render as `text/html`, or `render body: 'raw'` to match the deprecated behavior and render with the default Content-Type, which is `text/plain`. (called from hello at C:/Users/rwv10/Google Drive/RubyMine/DominicanOffice3/app/controllers/application_controller.rb:5)
+  Rendering text template
+  Rendered text template (1.0ms)
+Completed 200 OK in 155ms (Views: 101.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-26 16:35:51 +0100
+Processing by ApplicationController#hello as HTML
+DEPRECATION WARNING: `render :text` is deprecated because it does not actually render a `text/plain` response. Switch to `render plain: 'plain text'` to render as `text/plain`, `render html: '<strong>HTML</strong>'` to render as `text/html`, or `render body: 'raw'` to match the deprecated behavior and render with the default Content-Type, which is `text/plain`. (called from hello at C:/Users/rwv10/Google Drive/RubyMine/DominicanOffice3/app/controllers/application_controller.rb:5)
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-26 16:51:29 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (31.0ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for UsersController):
+  
+actionpack (5.0.0.rc2) lib/abstract_controller/base.rb:121:in `process'
+actionview (5.0.0.rc2) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.0.rc2) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.0.rc2) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.0.rc2) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.0.rc2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.0.rc2) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.0.rc2) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.0.rc2) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.0.rc2) lib/action_dispatch/routing/route_set.rb:725:in `call'
+rack (2.0.0.rc1) lib/rack/etag.rb:25:in `call'
+rack (2.0.0.rc1) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.0.rc1) lib/rack/head.rb:12:in `call'
+rack (2.0.0.rc1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.0.rc1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.0.rc2) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.0.rc2) lib/active_record/migration.rb:552:in `call'
+actionpack (5.0.0.rc2) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.rc2) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.rc2) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.rc2) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.rc2) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.rc2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.rc2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.rc2) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.3.0) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.rc2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.rc2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.rc2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.rc2) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.rc2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.rc2) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.rc2) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0.rc2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.0.rc1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.0.rc1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.rc2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.rc2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.rc2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.0.rc1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.rc2) lib/rails/engine.rb:522:in `call'
+puma (3.4.0) lib/puma/configuration.rb:224:in `call'
+puma (3.4.0) lib/puma/server.rb:569:in `handle_request'
+puma (3.4.0) lib/puma/server.rb:406:in `process_client'
+puma (3.4.0) lib/puma/server.rb:271:in `block in run'
+puma (3.4.0) lib/puma/thread_pool.rb:114:in `block in spawn_thread'
+  Rendering C:/Ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout
+  Rendered C:/Ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (30.0ms)
+Started GET "/" for 127.0.0.1 at 2016-06-26 16:58:03 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (58.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 127ms (ActiveRecord: 0.0ms)
+
+
+  
+LoadError (cannot load such file -- 2.3/bcrypt_ext):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<top (required)>'
+app/controllers/users_controller.rb:16:in `index'
+  Rendering C:/Ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/Ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.0ms)
+  Rendering C:/Ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering C:/Ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/Ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (2354.7ms)
+Started GET "/" for 127.0.0.1 at 2016-06-26 17:06:28 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (2.0ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.0ms)
+
+
+  
+LoadError (cannot load such file -- 2.3/bcrypt_ext):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<top (required)>'
+app/controllers/users_controller.rb:16:in `index'
+  Rendering C:/Ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/Ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.0ms)
+  Rendering C:/Ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering C:/Ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/Ruby23/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (2251.4ms)
+Started GET "/" for 127.0.0.1 at 2016-06-26 18:03:05 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (140.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 188ms (ActiveRecord: 143.2ms)
+
+
+  
+NoMethodError (undefined method `attr_accessible' for #<Class:0x5a5e3b0>):
+  
+app/models/user.rb:4:in `<class:User>'
+app/models/user.rb:1:in `<top (required)>'
+app/controllers/users_controller.rb:16:in `index'
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (1906.5ms)
+Started GET "/" for 127.0.0.1 at 2016-06-26 19:22:35 +0100
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.0.0.rc2) lib/active_record/migration.rb:572:in `check_pending!'
+activerecord (5.0.0.rc2) lib/active_record/migration.rb:548:in `call'
+actionpack (5.0.0.rc2) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.rc2) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.rc2) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.rc2) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.rc2) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.rc2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.rc2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.rc2) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.3.0) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.rc2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.rc2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.rc2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.rc2) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.rc2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.rc2) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.rc2) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0.rc2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.0.rc1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.0.rc1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.rc2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.rc2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.rc2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.0.rc1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.rc2) lib/rails/engine.rb:522:in `call'
+puma (3.4.0) lib/puma/configuration.rb:224:in `call'
+puma (3.4.0) lib/puma/server.rb:569:in `handle_request'
+puma (3.4.0) lib/puma/server.rb:406:in `process_client'
+puma (3.4.0) lib/puma/server.rb:271:in `block in run'
+puma (3.4.0) lib/puma/thread_pool.rb:114:in `call'
+puma (3.4.0) lib/puma/thread_pool.rb:114:in `block in spawn_thread'
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (2923.3ms)
+  [1m[35m (1340.8ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (377.4ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT DATABASE() as db[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT GET_LOCK('3580296477422488950', 0);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (12.0ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateUsers (20160626103644)
+  [1m[35m (259.3ms)[0m  [1m[35mCREATE TABLE `users` (`id` int AUTO_INCREMENT PRIMARY KEY, `user_name` varchar(255), `person_id` int, `password_digest` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20160626103644')[0m
+  [1m[35m (34.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2016-06-26 18:23:29', '2016-06-26 18:23:29')[0m
+  [1m[35m (32.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT RELEASE_LOCK('3580296477422488950')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSHOW CREATE TABLE `users`[0m
+  [1m[35m (1.0ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'users'[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'DominicanOffice_development'
+  AND fk.table_name = 'users'
+[0m
+Started GET "/" for 127.0.0.1 at 2016-06-26 19:23:53 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (2.0ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (29.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (49.1ms)
+Completed 500 Internal Server Error in 3400ms (ActiveRecord: 32.0ms)
+
+
+  
+ActionView::Template::Error (TypeError: Object doesn't support this property or method):
+    4:     <title>DominicanOffice</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__480545304_69259560'
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (13.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (2128.2ms)
+Started GET "/" for 127.0.0.1 at 2016-06-26 19:25:38 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (2.0ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 185ms (Views: 124.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-26 19:31:54 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 247ms (Views: 159.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2016-06-26 19:36:49 +0100
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (238.3ms)
+Completed 500 Internal Server Error in 464ms (ActiveRecord: 3.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `integer_field' for #<ActionView::Helpers::FormBuilder:0x8243be0>):
+    18:     </div>
+    19:     <div class="field">
+    20:       <%= f.label :person_id %><br />
+    21:       <%= f.integer_field :person_id %>
+    22:     </div>
+    23:     <div class="field">
+    24:       <%= f.label :password %><br />
+  
+app/views/users/new.html.erb:21:in `block in _app_views_users_new_html_erb__173992610_68421084'
+app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb__173992610_68421084'
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (1934.2ms)
+Started GET "/users/new" for 127.0.0.1 at 2016-06-26 19:40:19 +0100
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 183ms (Views: 146.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-06-26 19:43:02 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"m7KccrOBMepS76aPhQmlFFkIfXupBtNNG2PibatgLc9NpV2St4EJJ/nENHUICQZLsDbFG8MgeaicVdNiRlMKFg==", "user"=>{"user_name"=>"rwv1001", "person_id"=>"1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (2.0ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`person_id` = 1 LIMIT 1[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO `users` (`user_name`, `person_id`, `password_digest`, `created_at`, `updated_at`) VALUES ('rwv1001', 1, '$2a$10$.HmC9NjYETlisBS2yfclwO.qBj.nXV2oq7ily7N3itbF5yBGw6mQW', '2016-06-26 18:43:02', '2016-06-26 18:43:02')[0m
+  [1m[35m (82.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 425ms (ActiveRecord: 86.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-26 19:43:02 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 145ms (Views: 104.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-26 19:54:54 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 158ms (Views: 115.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-26 19:55:00 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 141ms (Views: 104.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2016-06-26 19:55:04 +0100
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 141ms (Views: 106.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-06-26 19:55:19 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LWA24DpSVfbxvU6Mowmqui3MVmUv8UCEfqJLVQBA2Fv7d/cAPlJtO1qW3HYuCQnlxPLuBUXX6mH5lHpa7XP/gg==", "user"=>{"user_name"=>"rwv1002", "person_id"=>"2", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`person_id` = 2 LIMIT 1[0m
+  [1m[35m (7.0ms)[0m  [1m[31mROLLBACK[0m
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 229ms (Views: 112.3ms | ActiveRecord: 8.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-06-26 19:55:28 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VpPK6s0CnlQs42hM4/xvMCJ1NYW4fEwsqcS8gBD1TNeAhAsKyQKmmYfI+rZu/Mxvy0uN5dJa5sku8o2P/cZrDg==", "user"=>{"user_name"=>"rwv1002", "person_id"=>"2", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`person_id` = 2 LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO `users` (`user_name`, `person_id`, `password_digest`, `created_at`, `updated_at`) VALUES ('rwv1002', 2, '$2a$10$Jy95.gucL05UqXnHjik/q.Z3reZlx5wp34eNsCdBOD8bYU.JikvGe', '2016-06-26 18:55:28', '2016-06-26 18:55:28')[0m
+  [1m[35m (81.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 193ms (ActiveRecord: 84.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-26 19:55:28 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 137ms (Views: 101.1ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (345.6ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (249.3ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT DATABASE() as db[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT GET_LOCK('3580296477422488950', 0);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (3.0ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateUsers (20160626103644)
+  [1m[35m (309.3ms)[0m  [1m[35mCREATE TABLE `users` (`id` int AUTO_INCREMENT PRIMARY KEY, `email` varchar(255), `person_id` int, `password_digest` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20160626103644')[0m
+  [1m[35m (12.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2016-06-26 19:10:25', '2016-06-26 19:10:25')[0m
+  [1m[35m (77.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT RELEASE_LOCK('3580296477422488950')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSHOW CREATE TABLE `users`[0m
+  [1m[35m (1.0ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'users'[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'DominicanOffice_development'
+  AND fk.table_name = 'users'
+[0m
+Started GET "/" for 127.0.0.1 at 2016-06-26 20:13:43 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (2.0ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (41.0ms)
+Completed 200 OK in 538ms (Views: 427.7ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2016-06-26 20:14:08 +0100
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (98.7ms)
+Completed 200 OK in 241ms (Views: 196.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-06-26 20:14:17 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D/u5ZrPAZtZnLXqotgN8Jy0g80lJQzOlp2ZO4RC/cprZ7HiGt8BeG8wG6FI7A994xB5LKSNlmUAgUH/u/YxVQw==", "user"=>{"email"=>"rwv1001@yahoo.co.uk", "person_id"=>"1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`person_id` = 1 LIMIT 1[0m
+  [1m[35mSQL (6.0ms)[0m  [1m[32mINSERT INTO `users` (`email`, `person_id`, `password_digest`, `created_at`, `updated_at`) VALUES ('rwv1001@yahoo.co.uk', 1, '$2a$10$Wfl3R/jblEyhUdNYQJWvLOAllTTUTMEq9NQnehaN5.zeIz7NUoS22', '2016-06-26 19:14:17', '2016-06-26 19:14:17')[0m
+  [1m[35m (25.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 155ms (ActiveRecord: 32.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-26 20:14:17 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 134ms (Views: 100.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2016-06-26 20:14:23 +0100
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 139ms (Views: 105.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-06-26 20:14:28 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Jrk+sto/NHztBy7whUnrO09StRgonyQa3hT2nDNU73iY1yvpFK9PGiiRsOwk4jA2pNWuowYDpWT5IIKSAmultQ==", "email"=>"rwv1001@yahoo.co.uk", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'rwv1001@yahoo.co.uk' LIMIT 1[0m
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 135ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-26 20:14:28 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 160ms (Views: 113.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2016-06-26 20:14:44 +0100
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 132ms (Views: 97.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2016-06-26 20:27:43 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (3.0ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (18.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 326ms (Views: 252.8ms | ActiveRecord: 22.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2016-06-26 21:21:44 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (3.0ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (19.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 239ms (Views: 165.9ms | ActiveRecord: 8.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-06-26 21:21:51 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Hh2N8JJCqMWDTHPjsvZJULUISK7/nVJaE7tk5bKjhSqgc5irXNLTo0ba7f8TXZJdXo9TFdEB0yQ0jxDrg5zP5w==", "email"=>"rwv1001@yahoo.co.uk", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'rwv1001@yahoo.co.uk' LIMIT 1[0m
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 104ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-26 21:21:51 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (4.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 185ms (Views: 140.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2016-06-26 21:21:56 +0100
+Processing by SessionsController#destroy as HTML
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-26 21:21:56 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 150ms (Views: 115.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-06-26 21:21:59 +0100
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 197ms (Views: 139.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-06-26 21:22:03 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4h969TrbdlT+zsiQPjewHG/0HqAowu96ehDU10WkPZdccW+u9EsNMjtYVoyfnGsRhHMFGwZebgRdJKDZdJt3Wg==", "email"=>"rwv1001@yahoo.co.uk", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'rwv1001@yahoo.co.uk' LIMIT 1[0m
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 214ms (Views: 113.7ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-06-26 21:25:27 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (2.0ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wis1CQxcJsfJ+me64Mjwh2O4Kw+9vWnxOF2xgppQFCx8RSBSwsxdoQxs+aZBYyuKiD8wtJMh6I8facWMq29e4Q==", "email"=>"rwv1001@yahoo.co.uk", "password"=>"[FILTERED]", "commit"=>"Log In"}
+Redirected to https://127.0.0.1/sessions
+Filter chain halted as #<Proc:0x85c7ad8@C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_controller/metal/force_ssl.rb:65> rendered or redirected
+Completed 301 Moved Permanently in 33ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-06-26 21:25:53 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wis1CQxcJsfJ+me64Mjwh2O4Kw+9vWnxOF2xgppQFCx8RSBSwsxdoQxs+aZBYyuKiD8wtJMh6I8facWMq29e4Q==", "email"=>"rwv1001@yahoo.co.uk", "password"=>"[FILTERED]", "commit"=>"Log In"}
+Redirected to https://127.0.0.1/sessions
+Filter chain halted as #<Proc:0x85c7ad8@C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_controller/metal/force_ssl.rb:65> rendered or redirected
+Completed 301 Moved Permanently in 1ms (ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT DATABASE() as db[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT GET_LOCK('3580296477422488950', 0);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.0ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to AddAuthTokenToUsers (20160626203027)
+  [1m[35m (1041.3ms)[0m  [1m[35mALTER TABLE `users` ADD `auth_token` varchar(255)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20160626203027')[0m
+  [1m[35m (32.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT RELEASE_LOCK('3580296477422488950')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSHOW CREATE TABLE `users`[0m
+  [1m[35m (1.0ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'users'[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'DominicanOffice_development'
+  AND fk.table_name = 'users'
+[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT DATABASE() as db[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT GET_LOCK('3580296477422488950', 0);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (3.0ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to AddPasswordResetToUsers (20160626204443)
+  [1m[35m (823.9ms)[0m  [1m[35mALTER TABLE `users` ADD `password_reset_token` varchar(255)[0m
+  [1m[35m (677.8ms)[0m  [1m[35mALTER TABLE `users` ADD `password_reset_sent_at` datetime[0m
+  [1m[35m (2.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20160626204443')[0m
+  [1m[35m (13.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT RELEASE_LOCK('3580296477422488950')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (1.0ms)[0m  [1m[35mSHOW CREATE TABLE `users`[0m
+  [1m[35m (1.0ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'users'[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'DominicanOffice_development'
+  AND fk.table_name = 'users'
+[0m
+Started GET "/" for 127.0.0.1 at 2016-06-26 22:03:04 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (2.0ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (112.1ms)
+Completed 200 OK in 763ms (Views: 422.8ms | ActiveRecord: 21.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-06-26 22:03:13 +0100
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 132ms (Views: 99.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-06-26 22:03:22 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+BOepamFW3U3FuIEfUpwzX0NPGZf3aK481tCRzt651RGfYv+ZxUgE/KAfBjc4avAloon3XFBI8bUbzZJCkWtmQ==", "email"=>"rwv1001@yahoo.co.uk", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'rwv1001@yahoo.co.uk' LIMIT 1[0m
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 131ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-26 22:03:22 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 142ms (Views: 107.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-26 22:03:33 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 132ms (Views: 99.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-26 22:03:35 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 136ms (Views: 103.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-06-26 22:04:08 +0100
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 145ms (Views: 104.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2016-06-26 22:04:18 +0100
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (129.5ms)
+Completed 200 OK in 259ms (Views: 224.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-06-26 22:04:28 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LlENgStZjhVLE4J3/EnAKv9nexgPUF0eYbhELQFFqHj4RsxhL1m22OA4EI1xSWN1FlnDeGV29/vmjnUi7HaPoQ==", "user"=>{"email"=>"rwv1001@yahoo.co.uk", "person_id"=>"1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/users_controller.rb:9:in `create'
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (2046.3ms)
+Started POST "/users" for 127.0.0.1 at 2016-06-26 22:05:11 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LlENgStZjhVLE4J3/EnAKv9nexgPUF0eYbhELQFFqHj4RsxhL1m22OA4EI1xSWN1FlnDeGV29/vmjnUi7HaPoQ==", "user"=>{"email"=>"rwv1002@yahoo.co.uk", "person_id"=>"1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/users_controller.rb:9:in `create'
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (2147.4ms)
+Started POST "/users" for 127.0.0.1 at 2016-06-26 22:05:27 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LlENgStZjhVLE4J3/EnAKv9nexgPUF0eYbhELQFFqHj4RsxhL1m22OA4EI1xSWN1FlnDeGV29/vmjnUi7HaPoQ==", "user"=>{"email"=>"rwv1002@yahoo.co.uk", "person_id"=>"2", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/users_controller.rb:9:in `create'
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (2134.4ms)
+Started POST "/users" for 127.0.0.1 at 2016-06-26 22:06:27 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LlENgStZjhVLE4J3/EnAKv9nexgPUF0eYbhELQFFqHj4RsxhL1m22OA4EI1xSWN1FlnDeGV29/vmjnUi7HaPoQ==", "user"=>{"email"=>"rwv1002@yahoo.co.uk", "person_id"=>"3", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/users_controller.rb:9:in `create'
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (2044.3ms)
+Started POST "/users" for 127.0.0.1 at 2016-06-26 22:10:28 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LlENgStZjhVLE4J3/EnAKv9nexgPUF0eYbhELQFFqHj4RsxhL1m22OA4EI1xSWN1FlnDeGV29/vmjnUi7HaPoQ==", "user"=>{"email"=>"rwv1002@yahoo.co.uk", "person_id"=>"3", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`person_id` = 3 LIMIT 1[0m
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`auth_token` = '1M7fZO6XVPQgsK7I9k-QSQ' LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO `users` (`email`, `person_id`, `password_digest`, `created_at`, `updated_at`, `auth_token`) VALUES ('rwv1002@yahoo.co.uk', 3, '$2a$10$skJg.yWUuFenAaJscEiFf.A81tA.C48o8.MsWvQYVCBTtvu7E6SCK', '2016-06-26 21:10:28', '2016-06-26 21:10:28', '1M7fZO6XVPQgsK7I9k-QSQ')[0m
+  [1m[35m (42.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 233ms (ActiveRecord: 46.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-26 22:10:28 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 143ms (Views: 110.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2016-06-26 22:11:47 +0100
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 137ms (Views: 104.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-06-26 22:11:58 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cNCxwRHk9lcjd7dWwWH+YOsIh8Ks2zZ0y0DOSz7d+vymx3AhFeTOmohcJaxMYV0/AjY/osb9nJFMdv9E0+7dJQ==", "user"=>{"email"=>"rwv10012@yahoo.co.uk", "person_id"=>"2", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`person_id` = 2 LIMIT 1[0m
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`auth_token` = 'hScrHxanWM3hcuVTmXGBSw' LIMIT 1[0m
+  [1m[35mSQL (42.1ms)[0m  [1m[32mINSERT INTO `users` (`email`, `person_id`, `password_digest`, `created_at`, `updated_at`, `auth_token`) VALUES ('rwv10012@yahoo.co.uk', 2, '$2a$10$Ar88SYHMtm5sCFcNLch66.2WpFlhpwXlJ34C5rPeXAv5O84VTaeq.', '2016-06-26 21:11:59', '2016-06-26 21:11:59', 'hScrHxanWM3hcuVTmXGBSw')[0m
+  [1m[35m (60.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 247ms (ActiveRecord: 105.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-26 22:11:59 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 188ms (Views: 134.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-26 22:21:23 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (2.0ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (35.0ms)
+Completed 200 OK in 225ms (Views: 149.4ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-06-26 22:21:30 +0100
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 132ms (Views: 98.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-06-26 22:21:37 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZForsdH/Kt1io6XC8Jka3v/++9vFdiIx6xViKhYGWeXaND7qH29Ru6c1O95RMsHTFHngYOvqo0/MIRYkJzkTKA==", "email"=>"rwv1001@yahoo.co.uk", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'rwv1001@yahoo.co.uk' LIMIT 1[0m
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 111ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-26 22:21:37 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 163ms (Views: 129.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-26 22:23:48 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 139ms (Views: 104.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-06-26 22:26:11 +0100
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 139ms (Views: 104.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-06-26 22:26:16 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kJGG2JwDNEc5eHlt8iElnvO/BpOFHArYrgemE/U+q4wu/5ODUpNPIfzu53FTiv6TGDgdKKuAi6aJM9IdxAHhQQ==", "email"=>"rwv1002@yahoo.co.uk", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'rwv1002@yahoo.co.uk' LIMIT 1[0m
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 102ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-26 22:26:16 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`auth_token` = '1M7fZO6XVPQgsK7I9k-QSQ' LIMIT 1[0m
+Completed 200 OK in 143ms (Views: 109.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2016-06-26 22:26:21 +0100
+Processing by SessionsController#destroy as HTML
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-26 22:26:21 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 135ms (Views: 102.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-06-26 22:26:23 +0100
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 161ms (Views: 122.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-06-26 22:26:27 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eao9iAWNZwwn3uzW484nBaKRQORHIouMclGz8d1810fHxCjTyx0cauJIcspCZfwISRZbX2m+CvJVZcf/7EOdig==", "email"=>"rwv1002@yahoo.co.uk", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'rwv1002@yahoo.co.uk' LIMIT 1[0m
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 102ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-26 22:26:27 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`auth_token` = '1M7fZO6XVPQgsK7I9k-QSQ' LIMIT 1[0m
+Completed 200 OK in 143ms (Views: 104.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2016-06-26 22:26:32 +0100
+Processing by SessionsController#destroy as HTML
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-26 22:26:32 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 199ms (Views: 165.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-06-26 22:26:37 +0100
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 137ms (Views: 100.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/password_resets/new" for 127.0.0.1 at 2016-06-26 22:26:40 +0100
+Processing by PasswordResetsController#new as HTML
+  Rendering password_resets/new.html.erb within layouts/application
+  Rendered password_resets/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 158ms (Views: 124.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/password_resets" for 127.0.0.1 at 2016-06-26 22:26:44 +0100
+Processing by PasswordResetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QL0YrsTJ5JI6IVDZRuc142Q2IXFINvSkuKOapK468uCYyi4vZDu66QmqxFoU9xYe1wr2NweYTGTfPjlJntkceQ==", "email"=>"rwv1002@yahoo.co.uk", "commit"=>"Reset Password"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'rwv1002@yahoo.co.uk' LIMIT 1[0m
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`password_reset_token` = 'z3ylnyLEyWAIZVbmWs4WQA' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (46.1ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`person_id` = 3 AND (`users`.`id` != 2) LIMIT 1[0m
+  [1m[35mSQL (448.5ms)[0m  [1m[33mUPDATE `users` SET `password_reset_token` = 'z3ylnyLEyWAIZVbmWs4WQA', `password_reset_sent_at` = '2016-06-26 21:26:44', `updated_at` = '2016-06-26 21:26:44' WHERE `users`.`id` = 2[0m
+  [1m[35m (208.1ms)[0m  [1m[35mCOMMIT[0m
+  Rendering user_mailer/password_reset.html.erb within layouts/mailer
+  Rendered user_mailer/password_reset.html.erb within layouts/mailer (0.0ms)
+  Rendering user_mailer/password_reset.text.erb within layouts/mailer
+  Rendered user_mailer/password_reset.text.erb within layouts/mailer (1.0ms)
+UserMailer#password_reset: processed outbound mail in 1130.8ms
+Sent mail to rwv1002@yahoo.co.uk (2134.3ms)
+Date: Sun, 26 Jun 2016 22:26:50 +0100
+From: noreply@example.com
+To: rwv1002@yahoo.co.uk
+Message-ID: <5770489ab0b63_36542dd377088012@DESKTOP-O8Q7E0E.mail>
+Subject: Password Reset
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5770489aa4bc2_36542dd37708795d";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5770489aa4bc2_36542dd37708795d
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+To reset your password, click the URL below.
+
+http://localhost:3000/password_resets/z3ylnyLEyWAIZVbmWs4WQA/edit
+
+If you did not request your password to be reset, just ignore this email and your password will continue to stay the same.
+
+----==_mimepart_5770489aa4bc2_36542dd37708795d
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>User#password_reset</h1>
+
+<p>
+  , find me in app/views/user_mailer/password_reset.html.erb
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_5770489aa4bc2_36542dd37708795d--
+
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 8545ms (ActiveRecord: 702.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-26 22:26:52 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 258ms (Views: 222.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/password_resets/z3ylnyLEyWAIZVbmWs4WQA/edit" for 127.0.0.1 at 2016-06-26 22:27:37 +0100
+Processing by PasswordResetsController#edit as HTML
+  Parameters: {"id"=>"z3ylnyLEyWAIZVbmWs4WQA"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`password_reset_token` = 'z3ylnyLEyWAIZVbmWs4WQA' LIMIT 1[0m
+  Rendering password_resets/edit.html.erb within layouts/application
+  Rendered password_resets/edit.html.erb within layouts/application (118.2ms)
+Completed 200 OK in 453ms (Views: 359.0ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/password_resets/z3ylnyLEyWAIZVbmWs4WQA" for 127.0.0.1 at 2016-06-26 22:27:43 +0100
+Processing by PasswordResetsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZxLyDQVjqm/G5aCuqZ3fo7mGDH5oaXHYiVnM7Gua+tQDOQD4uxVuXri2FmzFkR45o1mWefXJUaDfUxqEw9KkCg==", "user"=>{"password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Update Password", "id"=>"z3ylnyLEyWAIZVbmWs4WQA"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`password_reset_token` = 'z3ylnyLEyWAIZVbmWs4WQA' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 1.0ms)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/password_resets_controller.rb:19:in `update'
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (2068.4ms)
+Started GET "/login" for 127.0.0.1 at 2016-06-26 22:31:21 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (4.0ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 216ms (Views: 154.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-06-26 22:31:28 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"n7UQ45XiTEmJRDbnSqszu0X+P94yzUEX2u3duMV9gOYh2wW4W3I3L0zSqPvrAOi2rnkkZRxRwGn92am29ELKKw==", "email"=>"rwv1002@yahoo.co.uk", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'rwv1002@yahoo.co.uk' LIMIT 1[0m
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 138ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-26 22:31:28 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (4.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`auth_token` = '1M7fZO6XVPQgsK7I9k-QSQ' LIMIT 1[0m
+Completed 200 OK in 176ms (Views: 123.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2016-06-26 22:31:33 +0100
+Processing by SessionsController#destroy as HTML
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-26 22:31:33 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 143ms (Views: 107.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-06-26 22:31:36 +0100
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 140ms (Views: 104.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/password_resets/new" for 127.0.0.1 at 2016-06-26 22:31:41 +0100
+Processing by PasswordResetsController#new as HTML
+  Rendering password_resets/new.html.erb within layouts/application
+  Rendered password_resets/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 148ms (Views: 115.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/password_resets" for 127.0.0.1 at 2016-06-26 22:31:47 +0100
+Processing by PasswordResetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3bfUqG5/un2hsF3Lgd+T9FfyU1gu/JE1/sBHeU/BWEEFwOIpzo3kBpI7yUjTz7AJ5M6EHmFSKfWZXeSUfyK22A==", "email"=>"rwv1002@yahoo.co.uk", "commit"=>"Reset Password"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'rwv1002@yahoo.co.uk' LIMIT 1[0m
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`password_reset_token` = '5tA-BxlXJ1foZEOAu7sI2A' LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`person_id` = 3 AND (`users`.`id` != 2) LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE `users` SET `password_reset_token` = '5tA-BxlXJ1foZEOAu7sI2A', `password_reset_sent_at` = '2016-06-26 21:31:47', `updated_at` = '2016-06-26 21:31:47' WHERE `users`.`id` = 2[0m
+  [1m[35m (20.0ms)[0m  [1m[35mCOMMIT[0m
+  Rendering user_mailer/password_reset.html.erb within layouts/mailer
+  Rendered user_mailer/password_reset.html.erb within layouts/mailer (1.0ms)
+  Rendering user_mailer/password_reset.text.erb within layouts/mailer
+  Rendered user_mailer/password_reset.text.erb within layouts/mailer (1.0ms)
+UserMailer#password_reset: processed outbound mail in 806.9ms
+Sent mail to rwv1002@yahoo.co.uk (2028.9ms)
+Date: Sun, 26 Jun 2016 22:31:48 +0100
+From: noreply@example.com
+To: rwv1002@yahoo.co.uk
+Message-ID: <577049c4b55a7_27882e0d6e896652@DESKTOP-O8Q7E0E.mail>
+Subject: Password Reset
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_577049c4b1ed9_27882e0d6e896514";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_577049c4b1ed9_27882e0d6e896514
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+To reset your password, click the URL below.
+
+http://localhost:3000/password_resets/5tA-BxlXJ1foZEOAu7sI2A/edit
+
+If you did not request your password to be reset, just ignore this email and your password will continue to stay the same.
+
+----==_mimepart_577049c4b1ed9_27882e0d6e896514
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>User#password_reset</h1>
+
+<p>
+  , find me in app/views/user_mailer/password_reset.html.erb
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_577049c4b1ed9_27882e0d6e896514--
+
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 3562ms (ActiveRecord: 23.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-26 22:31:50 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 184ms (Views: 128.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/password_resets/5tA-BxlXJ1foZEOAu7sI2A/edit" for 127.0.0.1 at 2016-06-26 22:32:21 +0100
+Processing by PasswordResetsController#edit as HTML
+  Parameters: {"id"=>"5tA-BxlXJ1foZEOAu7sI2A"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`password_reset_token` = '5tA-BxlXJ1foZEOAu7sI2A' LIMIT 1[0m
+  Rendering password_resets/edit.html.erb within layouts/application
+  Rendered password_resets/edit.html.erb within layouts/application (40.0ms)
+Completed 200 OK in 198ms (Views: 161.4ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/password_resets/5tA-BxlXJ1foZEOAu7sI2A" for 127.0.0.1 at 2016-06-26 22:32:28 +0100
+Processing by PasswordResetsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6OOFlXi2UGiYhqWu5L5k84yVXQ925R+2t8RJsWOQAOnj/9PKqUxEqcJq84to5stdVbF3ajqLNeVn2pozVlt1+Q==", "user"=>{"password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Update Password", "id"=>"5tA-BxlXJ1foZEOAu7sI2A"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`password_reset_token` = '5tA-BxlXJ1foZEOAu7sI2A' LIMIT 1[0m
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `user_params' for #<PasswordResetsController:0x6259230>):
+  
+app/controllers/password_resets_controller.rb:19:in `update'
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (2256.5ms)
+Started GET "/login" for 127.0.0.1 at 2016-06-26 22:37:43 +0100
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 146ms (Views: 112.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/password_resets/new" for 127.0.0.1 at 2016-06-26 22:37:48 +0100
+Processing by PasswordResetsController#new as HTML
+  Rendering password_resets/new.html.erb within layouts/application
+  Rendered password_resets/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 142ms (Views: 106.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/password_resets" for 127.0.0.1 at 2016-06-26 22:37:54 +0100
+Processing by PasswordResetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"K54/sNi3fGQ4KA6UWn55rrulAij3fItmnQFmd4sV1vzz6QkxeEUiHwujmhcIblpTCJnVbrjSM6b6nMWau/Y4ZQ==", "email"=>"rwv1002@yahoo.co.uk", "commit"=>"Reset Password"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'rwv1002@yahoo.co.uk' LIMIT 1[0m
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`password_reset_token` = 'NoMdnkxen6c22o5knp8QkQ' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`person_id` = 3 AND (`users`.`id` != 2) LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[33mUPDATE `users` SET `password_reset_token` = 'NoMdnkxen6c22o5knp8QkQ', `password_reset_sent_at` = '2016-06-26 21:37:54', `updated_at` = '2016-06-26 21:37:54' WHERE `users`.`id` = 2[0m
+  [1m[35m (71.0ms)[0m  [1m[35mCOMMIT[0m
+  Rendering user_mailer/password_reset.html.erb within layouts/mailer
+  Rendered user_mailer/password_reset.html.erb within layouts/mailer (1.0ms)
+  Rendering user_mailer/password_reset.text.erb within layouts/mailer
+  Rendered user_mailer/password_reset.text.erb within layouts/mailer (1.0ms)
+UserMailer#password_reset: processed outbound mail in 518.6ms
+Sent mail to rwv1002@yahoo.co.uk (2010.0ms)
+Date: Sun, 26 Jun 2016 22:37:54 +0100
+From: noreply@example.com
+To: rwv1002@yahoo.co.uk
+Message-ID: <57704b32bca90_27882e0d69496895@DESKTOP-O8Q7E0E.mail>
+Subject: Password Reset
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_57704b32bbaeb_27882e0d694967e1";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_57704b32bbaeb_27882e0d694967e1
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+To reset your password, click the URL below.
+
+http://localhost:3000/password_resets/NoMdnkxen6c22o5knp8QkQ/edit
+
+If you did not request your password to be reset, just ignore this email and your password will continue to stay the same.
+
+----==_mimepart_57704b32bbaeb_27882e0d694967e1
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>User#password_reset</h1>
+
+<p>
+  , find me in app/views/user_mailer/password_reset.html.erb
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_57704b32bbaeb_27882e0d694967e1--
+
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 2652ms (ActiveRecord: 74.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-26 22:37:56 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 138ms (Views: 103.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/password_resets/NoMdnkxen6c22o5knp8QkQ/edit" for 127.0.0.1 at 2016-06-26 22:38:23 +0100
+Processing by PasswordResetsController#edit as HTML
+  Parameters: {"id"=>"NoMdnkxen6c22o5knp8QkQ"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`password_reset_token` = 'NoMdnkxen6c22o5knp8QkQ' LIMIT 1[0m
+  Rendering password_resets/edit.html.erb within layouts/application
+  Rendered password_resets/edit.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 151ms (Views: 110.3ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/password_resets/NoMdnkxen6c22o5knp8QkQ" for 127.0.0.1 at 2016-06-26 22:38:30 +0100
+Processing by PasswordResetsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"icPnGpPCMV+3TLKL1NiPayQwK+OVa5hiVceVvBbLvikRdhweevEBzZGYFFe0Hejp24ljhZvbx/U9+FXP37tjcQ==", "user"=>{"password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Update Password", "id"=>"NoMdnkxen6c22o5knp8QkQ"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`password_reset_token` = 'NoMdnkxen6c22o5knp8QkQ' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`person_id` = 3 AND (`users`.`id` != 2) LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[33mUPDATE `users` SET `password_digest` = '$2a$10$l64alonM7BwuqAEdUtXzA.yEK689jD.byep2PYGOgLpZCh0IaVhzu', `updated_at` = '2016-06-26 21:38:30' WHERE `users`.`id` = 2[0m
+  [1m[35m (25.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 135ms (ActiveRecord: 27.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-26 22:38:30 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 144ms (Views: 107.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-06-26 22:38:40 +0100
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 142ms (Views: 109.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-06-26 22:38:47 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"T4ei7j0AUF/pGPsW25L23qf4joMnxE55tLKR7GkqDI0IOuVRrgV0qsz6hfFo02PxvkvRVrMcfQgisXNwffbTyA==", "email"=>"rwv1002@yahoo.co.uk", "password"=>"[FILTERED]", "remember_me"=>"1", "commit"=>"Log In"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'rwv1002@yahoo.co.uk' LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 104ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-26 22:38:48 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (5.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`auth_token` = '1M7fZO6XVPQgsK7I9k-QSQ' LIMIT 1[0m
+Completed 200 OK in 266ms (Views: 199.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-26 22:39:04 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (5.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`auth_token` = '1M7fZO6XVPQgsK7I9k-QSQ' LIMIT 1[0m
+Completed 200 OK in 158ms (Views: 119.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2016-06-26 22:39:10 +0100
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-26 22:39:10 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 286ms (Views: 212.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-26 22:39:12 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 140ms (Views: 106.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-06-26 22:39:15 +0100
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 141ms (Views: 105.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-06-26 22:39:18 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F6NZWuN5lIeYRcHRfTHVU5td1qDG7lul5E/OstlBeqtQHh7lcHywcr2nvzbOcEB8gu6JdVI2aNRyTCwuzZ2l7g==", "email"=>"rwv1002@yahoo.co.uk", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'rwv1002@yahoo.co.uk' LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 102ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-26 22:39:18 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (4.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`auth_token` = '1M7fZO6XVPQgsK7I9k-QSQ' LIMIT 1[0m
+Completed 200 OK in 143ms (Views: 108.2ms | ActiveRecord: 1.0ms)
+
+
+  [1m[35m (366.9ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (301.3ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT DATABASE() as db[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT GET_LOCK('3580296477422488950', 0);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.0ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateUsers (20160626103644)
+  [1m[35m (257.3ms)[0m  [1m[35mCREATE TABLE `users` (`id` int AUTO_INCREMENT PRIMARY KEY, `email` varchar(255), `first_name` varchar(255), `second_name` varchar(255), `password_digest` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20160626103644')[0m
+  [1m[35m (22.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAuthTokenToUsers (20160626203027)
+  [1m[35m (437.5ms)[0m  [1m[35mALTER TABLE `users` ADD `auth_token` varchar(255)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20160626203027')[0m
+  [1m[35m (37.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddPasswordResetToUsers (20160626204443)
+  [1m[35m (326.4ms)[0m  [1m[35mALTER TABLE `users` ADD `password_reset_token` varchar(255)[0m
+  [1m[35m (652.8ms)[0m  [1m[35mALTER TABLE `users` ADD `password_reset_sent_at` datetime[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (14.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20160626204443')[0m
+  [1m[35m (24.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2016-06-26 21:45:11', '2016-06-26 21:45:11')[0m
+  [1m[35m (20.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT RELEASE_LOCK('3580296477422488950')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (1.0ms)[0m  [1m[35mSHOW CREATE TABLE `users`[0m
+  [1m[35m (1.0ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'users'[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'DominicanOffice_development'
+  AND fk.table_name = 'users'
+[0m
+Started GET "/" for 127.0.0.1 at 2016-06-26 22:46:22 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (3.0ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (55.1ms)
+Completed 200 OK in 427ms (Views: 304.8ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2016-06-26 22:46:31 +0100
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (46.1ms)
+Completed 200 OK in 190ms (Views: 146.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2016-06-26 22:49:40 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (2.0ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (66.1ms)
+Completed 200 OK in 278ms (Views: 206.4ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2016-06-26 22:49:51 +0100
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 133ms (Views: 100.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-06-26 22:50:03 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/IGX861BoXT7nILcfU1fYYVG+5xh4tb4vS6zg2NrAJAqllYTqUGZuVC3ECbwTfw+bHhD/AvEfB06GIKMjlgnSQ==", "user"=>{"email"=>"rwv1001@yahoo.co.uk", "first_name"=>"Robert", "second_name"=>"Verrill", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (37.1ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'rwv1001@yahoo.co.uk' LIMIT 1[0m
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`auth_token` = '9giSzLH8Dw7SoC6akCSo4Q' LIMIT 1[0m
+  [1m[35mSQL (16.1ms)[0m  [1m[32mINSERT INTO `users` (`email`, `first_name`, `second_name`, `password_digest`, `created_at`, `updated_at`, `auth_token`) VALUES ('rwv1001@yahoo.co.uk', 'Robert', 'Verrill', '$2a$10$Gp0kEhkD6SHnp5vp45h7Y.mi.fWtoCjzNZGIdHSYi/weFGr37yvJ2', '2016-06-26 21:50:04', '2016-06-26 21:50:04', '9giSzLH8Dw7SoC6akCSo4Q')[0m
+  [1m[35m (31.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 321ms (ActiveRecord: 84.2ms)
+
+
+  
+NameError (undefined local variable or method `user' for #<UsersController:0x60987f0>):
+  
+app/controllers/users_controller.rb:11:in `create'
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (11.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (2912.3ms)
+Started GET "/" for 127.0.0.1 at 2016-06-26 22:57:45 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (2.0ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (33.0ms)
+Completed 200 OK in 231ms (Views: 168.1ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-26 22:57:51 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 152ms (Views: 107.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-26 22:58:23 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 133ms (Views: 99.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2016-06-26 22:58:26 +0100
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (39.0ms)
+Completed 200 OK in 181ms (Views: 147.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-06-26 22:58:47 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mfFS31Vfc9U7qEO+WgYmp84V8XiXikj7AfCqQ+NkqglP5pM/UV9LGJCD0UTXBoX4JytJGP2s4h6GxptMDleN0A==", "user"=>{"email"=>"rwv1001@yahoo.co.uk", "first_name"=>"Robert", "second_name"=>"Verrill", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'rwv1001@yahoo.co.uk' LIMIT 1[0m
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`auth_token` = 'oHlu7eNqGwxDIcEOm81efA' LIMIT 1[0m
+  [1m[35mSQL (5.0ms)[0m  [1m[32mINSERT INTO `users` (`email`, `first_name`, `second_name`, `password_digest`, `created_at`, `updated_at`, `auth_token`) VALUES ('rwv1001@yahoo.co.uk', 'Robert', 'Verrill', '$2a$10$hd6KlUZZrPsWtG4wlY7Z/uYVP7HtZlX7YJl.30y.NWs3wJ3IfHIWm', '2016-06-26 21:58:47', '2016-06-26 21:58:47', 'oHlu7eNqGwxDIcEOm81efA')[0m
+  [1m[35m (23.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 202ms (ActiveRecord: 29.1ms)
+
+
+  
+NameError (undefined local variable or method `user' for #<UsersController:0x5d9b520>):
+  
+app/controllers/users_controller.rb:11:in `create'
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (2244.5ms)
+Started POST "/users" for 127.0.0.1 at 2016-06-26 23:03:30 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mfFS31Vfc9U7qEO+WgYmp84V8XiXikj7AfCqQ+NkqglP5pM/UV9LGJCD0UTXBoX4JytJGP2s4h6GxptMDleN0A==", "user"=>{"email"=>"rwv1001@yahoo.co.uk", "first_name"=>"Robert", "second_name"=>"Verrill", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'rwv1001@yahoo.co.uk' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK[0m
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 269ms (Views: 130.6ms | ActiveRecord: 6.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-06-26 23:03:35 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+XgMLc1R2r64QhmNDxgB/FjdafW8AsP5ansZmaqZYvMvb83NyVHicxNpi3eCGKKjsePRldYkaRztTSiWR6pFKg==", "user"=>{"email"=>"rwv1001@yahoo.co.uk", "first_name"=>"Robert", "second_name"=>"Verrill", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'rwv1001@yahoo.co.uk' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK[0m
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 217ms (Views: 109.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-06-26 23:03:48 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mWaARNyuukbvztMkPyoeRXmWy7scjJBkF1LdkJvr3plPcUGk2K6Ci0TlQd6yKr0akKhz23aqOoGQZOyfdtj5QA==", "user"=>{"email"=>"rwv1002@yahoo.co.uk", "first_name"=>"Robert", "second_name"=>"Verrill", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'rwv1002@yahoo.co.uk' LIMIT 1[0m
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`auth_token` = '9uCldGyJduJZnxQFw0Siuw' LIMIT 1[0m
+  [1m[35mSQL (7.0ms)[0m  [1m[32mINSERT INTO `users` (`email`, `first_name`, `second_name`, `password_digest`, `created_at`, `updated_at`, `auth_token`) VALUES ('rwv1002@yahoo.co.uk', 'Robert', 'Verrill', '$2a$10$1EGUj6cjhlaBfoKEiw6Z/ep13AdQNf7.YDy469TCvSPJOW1LAv3bC', '2016-06-26 22:03:48', '2016-06-26 22:03:48', '9uCldGyJduJZnxQFw0Siuw')[0m
+  [1m[35m (22.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 139ms (ActiveRecord: 30.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-26 23:03:48 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`auth_token` = '9uCldGyJduJZnxQFw0Siuw' LIMIT 1[0m
+Completed 200 OK in 157ms (Views: 119.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2016-06-26 23:03:55 +0100
+Processing by SessionsController#destroy as HTML
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-26 23:03:55 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 135ms (Views: 102.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-06-26 23:03:58 +0100
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 134ms (Views: 101.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/password_resets/new" for 127.0.0.1 at 2016-06-26 23:04:02 +0100
+Processing by PasswordResetsController#new as HTML
+  Rendering password_resets/new.html.erb within layouts/application
+  Rendered password_resets/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 135ms (Views: 101.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/password_resets" for 127.0.0.1 at 2016-06-26 23:04:06 +0100
+Processing by PasswordResetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Rf1crDELWZJz0pFoIQ5KK9+q1yooIiYSsJ7QUIdPTOKdimotkfkH6UBZBetzHmnWbJYAbGeMntLXA3O9t6yiew==", "email"=>"rwv1002@yahoo.co.uk", "commit"=>"Reset Password"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'rwv1002@yahoo.co.uk' LIMIT 1[0m
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`password_reset_token` = '_33K6H98-nzdtEzgWGzixg' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'rwv1002@yahoo.co.uk' AND (`users`.`id` != 3) LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[33mUPDATE `users` SET `password_reset_token` = '_33K6H98-nzdtEzgWGzixg', `password_reset_sent_at` = '2016-06-26 22:04:06', `updated_at` = '2016-06-26 22:04:06' WHERE `users`.`id` = 3[0m
+  [1m[35m (46.3ms)[0m  [1m[35mCOMMIT[0m
+  Rendering user_mailer/password_reset.html.erb within layouts/mailer
+  Rendered user_mailer/password_reset.html.erb within layouts/mailer (0.0ms)
+  Rendering user_mailer/password_reset.text.erb within layouts/mailer
+  Rendered user_mailer/password_reset.text.erb within layouts/mailer (1.0ms)
+UserMailer#password_reset: processed outbound mail in 958.0ms
+Sent mail to rwv1002@yahoo.co.uk (2036.3ms)
+Date: Sun, 26 Jun 2016 23:04:08 +0100
+From: noreply@example.com
+To: rwv1002@yahoo.co.uk
+Message-ID: <577051582d27d_a542c6141427538@DESKTOP-O8Q7E0E.mail>
+Subject: Password Reset
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_57705158274b1_a542c61414274d6";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_57705158274b1_a542c61414274d6
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+To reset your password, click the URL below.
+
+http://localhost:3000/password_resets/_33K6H98-nzdtEzgWGzixg/edit
+
+If you did not request your password to be reset, just ignore this email and your password will continue to stay the same.
+
+----==_mimepart_57705158274b1_a542c61414274d6
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>User#password_reset</h1>
+
+<p>
+  , find me in app/views/user_mailer/password_reset.html.erb
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_57705158274b1_a542c61414274d6--
+
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 3891ms (ActiveRecord: 48.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-26 23:04:10 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 140ms (Views: 106.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/password_resets/_33K6H98-nzdtEzgWGzixg/edit" for 127.0.0.1 at 2016-06-26 23:04:26 +0100
+Processing by PasswordResetsController#edit as HTML
+  Parameters: {"id"=>"_33K6H98-nzdtEzgWGzixg"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`password_reset_token` = '_33K6H98-nzdtEzgWGzixg' LIMIT 1[0m
+  Rendering password_resets/edit.html.erb within layouts/application
+  Rendered password_resets/edit.html.erb within layouts/application (4.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`auth_token` = '1M7fZO6XVPQgsK7I9k-QSQ' LIMIT 1[0m
+Completed 500 Internal Server Error in 235ms (ActiveRecord: 1.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User):
+  
+app/controllers/application_controller.rb:7:in `current_user'
+app/views/layouts/application.html.erb:13:in `_app_views_layouts_application_html_erb__139984547_68084076'
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (1891.1ms)
+Started GET "/" for 127.0.0.1 at 2016-06-26 23:07:24 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 137ms (Views: 102.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-26 23:07:25 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 135ms (Views: 101.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-06-26 23:07:28 +0100
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 138ms (Views: 104.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-06-26 23:07:35 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"S8g6G+5N3/0g4IgzRweMA2RLm1xGZn8TtdF/VUO2Qpv1pi9AIN2km+V2Fi/mrFcOj8yA52j6/m2S5QtbcokIVg==", "email"=>"rwv1002@yahoo.co.uk", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'rwv1002@yahoo.co.uk' LIMIT 1[0m
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 102ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-26 23:07:36 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`auth_token` = '9uCldGyJduJZnxQFw0Siuw' LIMIT 1[0m
+Completed 200 OK in 158ms (Views: 112.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2016-06-26 23:07:38 +0100
+Processing by SessionsController#destroy as HTML
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-26 23:07:38 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 135ms (Views: 101.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-06-26 23:07:41 +0100
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 138ms (Views: 104.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/password_resets/new" for 127.0.0.1 at 2016-06-26 23:07:45 +0100
+Processing by PasswordResetsController#new as HTML
+  Rendering password_resets/new.html.erb within layouts/application
+  Rendered password_resets/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 132ms (Views: 99.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/password_resets" for 127.0.0.1 at 2016-06-26 23:07:51 +0100
+Processing by PasswordResetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cKAlWnuIsESQcGrxFqcs0cE6T4MzAMelkSbIf4jCptmo1xPb23ruP6P7/nJEtw8scgaYxXyuf2X2u2uSuCFIQA==", "email"=>"rwv1002@yahoo.co.uk", "commit"=>"Reset Password"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'rwv1002@yahoo.co.uk' LIMIT 1[0m
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`password_reset_token` = 'oZWxABkG1FqK14-88TL0Fg' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'rwv1002@yahoo.co.uk' AND (`users`.`id` != 3) LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[33mUPDATE `users` SET `password_reset_token` = 'oZWxABkG1FqK14-88TL0Fg', `password_reset_sent_at` = '2016-06-26 22:07:51', `updated_at` = '2016-06-26 22:07:51' WHERE `users`.`id` = 3[0m
+  [1m[35m (78.0ms)[0m  [1m[35mCOMMIT[0m
+  Rendering user_mailer/password_reset.html.erb within layouts/mailer
+  Rendered user_mailer/password_reset.html.erb within layouts/mailer (0.0ms)
+  Rendering user_mailer/password_reset.text.erb within layouts/mailer
+  Rendered user_mailer/password_reset.text.erb within layouts/mailer (1.0ms)
+UserMailer#password_reset: processed outbound mail in 512.6ms
+Sent mail to rwv1002@yahoo.co.uk (2010.0ms)
+Date: Sun, 26 Jun 2016 23:07:52 +0100
+From: noreply@example.com
+To: rwv1002@yahoo.co.uk
+Message-ID: <577052387defe_a542c61414277d4@DESKTOP-O8Q7E0E.mail>
+Subject: Password Reset
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_577052387d343_a542c6141427694";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_577052387d343_a542c6141427694
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+To reset your password, click the URL below.
+
+http://localhost:3000/password_resets/oZWxABkG1FqK14-88TL0Fg/edit
+
+If you did not request your password to be reset, just ignore this email and your password will continue to stay the same.
+
+----==_mimepart_577052387d343_a542c6141427694
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>User#password_reset</h1>
+
+<p>
+  , find me in app/views/user_mailer/password_reset.html.erb
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_577052387d343_a542c6141427694--
+
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 2611ms (ActiveRecord: 80.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-26 23:07:54 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 251ms (Views: 193.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/password_resets/oZWxABkG1FqK14-88TL0Fg/edit" for 127.0.0.1 at 2016-06-26 23:08:21 +0100
+Processing by PasswordResetsController#edit as HTML
+  Parameters: {"id"=>"oZWxABkG1FqK14-88TL0Fg"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`password_reset_token` = 'oZWxABkG1FqK14-88TL0Fg' LIMIT 1[0m
+  Rendering password_resets/edit.html.erb within layouts/application
+  Rendered password_resets/edit.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`auth_token` = '1M7fZO6XVPQgsK7I9k-QSQ' LIMIT 1[0m
+Completed 500 Internal Server Error in 171ms (ActiveRecord: 2.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User):
+  
+app/controllers/application_controller.rb:7:in `current_user'
+app/views/layouts/application.html.erb:13:in `_app_views_layouts_application_html_erb__139984547_75358092'
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (1901.7ms)
+Started GET "/password_resets/oZWxABkG1FqK14-88TL0Fg/edit" for 127.0.0.1 at 2016-06-26 23:12:15 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (3.0ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by PasswordResetsController#edit as HTML
+  Parameters: {"id"=>"oZWxABkG1FqK14-88TL0Fg"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`password_reset_token` = 'oZWxABkG1FqK14-88TL0Fg' LIMIT 1[0m
+  Rendering password_resets/edit.html.erb within layouts/application
+  Rendered password_resets/edit.html.erb within layouts/application (158.3ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`auth_token` = '1M7fZO6XVPQgsK7I9k-QSQ' LIMIT 1[0m
+Completed 500 Internal Server Error in 154566ms (ActiveRecord: 6.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User):
+  
+app/controllers/application_controller.rb:7:in `current_user'
+app/views/layouts/application.html.erb:13:in `_app_views_layouts_application_html_erb__6609659_41311668'
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (77.1ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (21.0ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.rc2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (2232.5ms)
+Started GET "/" for 127.0.0.1 at 2016-06-27 09:27:24 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (36.0ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (56.1ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (267.3ms)
+Completed 200 OK in 840ms (Views: 564.2ms | ActiveRecord: 132.1ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-06-27 09:27:33 +0100
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 175ms (Views: 122.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/password_resets/new" for 127.0.0.1 at 2016-06-27 09:27:37 +0100
+Processing by PasswordResetsController#new as HTML
+  Rendering password_resets/new.html.erb within layouts/application
+  Rendered password_resets/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 131ms (Views: 97.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/password_resets" for 127.0.0.1 at 2016-06-27 09:27:41 +0100
+Processing by PasswordResetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HHUJv+pnP+b30m20yQ7D7+VMS3Sm/2w9XzAxH3hLxC5LygJhqEDjwW5zGL++QBKd3eTmq0iZ6GjkAHqR5Deaeg==", "email"=>"rwv1002@yahoo.co.uk", "commit"=>"Reset Password"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'rwv1002@yahoo.co.uk' LIMIT 1[0m
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`password_reset_token` = 'VfSr3Uppr4hTYKtLOyQ-cQ' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (7.0ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'rwv1002@yahoo.co.uk' AND (`users`.`id` != 3) LIMIT 1[0m
+  [1m[35mSQL (18.0ms)[0m  [1m[33mUPDATE `users` SET `password_reset_token` = 'VfSr3Uppr4hTYKtLOyQ-cQ', `password_reset_sent_at` = '2016-06-27 08:27:41', `updated_at` = '2016-06-27 08:27:41' WHERE `users`.`id` = 3[0m
+  [1m[35m (78.1ms)[0m  [1m[35mCOMMIT[0m
+  Rendering user_mailer/password_reset.html.erb within layouts/mailer
+  Rendered user_mailer/password_reset.html.erb within layouts/mailer (1.0ms)
+  Rendering user_mailer/password_reset.text.erb within layouts/mailer
+  Rendered user_mailer/password_reset.text.erb within layouts/mailer (1.0ms)
+UserMailer#password_reset: processed outbound mail in 778.7ms
+Sent mail to rwv1002@yahoo.co.uk (2145.3ms)
+Date: Mon, 27 Jun 2016 09:27:43 +0100
+From: noreply@example.com
+To: rwv1002@yahoo.co.uk
+Message-ID: <5770e37fa7f25_28402f40b70446df@DESKTOP-O8Q7E0E.mail>
+Subject: Password Reset
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5770e37fa18d4_28402f40b7044596";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5770e37fa18d4_28402f40b7044596
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+To reset your password, click the URL below.
+
+http://localhost:3000/password_resets/VfSr3Uppr4hTYKtLOyQ-cQ/edit
+
+If you did not request your password to be reset, just ignore this email and your password will continue to stay the same.
+
+----==_mimepart_5770e37fa18d4_28402f40b7044596
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>User#password_reset</h1>
+
+<p>
+  , find me in app/views/user_mailer/password_reset.html.erb
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_5770e37fa18d4_28402f40b7044596--
+
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 4171ms (ActiveRecord: 104.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-27 09:27:45 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 152ms (Views: 117.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/password_resets/VfSr3Uppr4hTYKtLOyQ-cQ/edit" for 127.0.0.1 at 2016-06-27 09:28:08 +0100
+Processing by PasswordResetsController#edit as HTML
+  Parameters: {"id"=>"VfSr3Uppr4hTYKtLOyQ-cQ"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`password_reset_token` = 'VfSr3Uppr4hTYKtLOyQ-cQ' LIMIT 1[0m
+  Rendering password_resets/edit.html.erb within layouts/application
+  Rendered password_resets/edit.html.erb within layouts/application (126.1ms)
+Completed 200 OK in 400ms (Views: 319.0ms | ActiveRecord: 2.0ms)
+
+
+Started PATCH "/password_resets/VfSr3Uppr4hTYKtLOyQ-cQ" for 127.0.0.1 at 2016-06-27 09:28:14 +0100
+Processing by PasswordResetsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UOGEwcKej9ld6Qv4xESq1Odbw7K0uE+eQ2E0H2eIjuwonVnzLp8gUhaH0ACCPQcawRpYfjQP3XoVcu1yLl12tg==", "user"=>{"password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Update Password", "id"=>"VfSr3Uppr4hTYKtLOyQ-cQ"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`password_reset_token` = 'VfSr3Uppr4hTYKtLOyQ-cQ' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'rwv1002@yahoo.co.uk' AND (`users`.`id` != 3) LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[33mUPDATE `users` SET `password_digest` = '$2a$10$phvu.5wqUR/Cr52J0SnUxOkrgUpbAXWNeMQQ.AuG4fADrROYF95Lu', `updated_at` = '2016-06-27 08:28:15' WHERE `users`.`id` = 3[0m
+  [1m[35m (29.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 148ms (ActiveRecord: 30.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-27 09:28:15 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 143ms (Views: 103.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-06-27 09:28:56 +0100
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 140ms (Views: 104.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-06-27 09:29:04 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TGpp5Bjxa6tj9M4JC5YeiKkXi2loh+2hFzlyz2cdf7cBdZ+Ai3toeHlkXLcTgMHlcMPc1sVHibwaUrKgaq1tYg==", "email"=>"rwv1002@yahoo.co.uk", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'rwv1002@yahoo.co.uk' LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 103ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-27 09:29:04 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (6.0ms)
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`auth_token` = '9uCldGyJduJZnxQFw0Siuw' LIMIT 1[0m
+Completed 200 OK in 184ms (Views: 132.5ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2016-06-27 09:29:06 +0100
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-27 09:29:07 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 158ms (Views: 120.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-06-27 09:29:09 +0100
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 161ms (Views: 125.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/password_resets/new" for 127.0.0.1 at 2016-06-27 09:29:11 +0100
+Processing by PasswordResetsController#new as HTML
+  Rendering password_resets/new.html.erb within layouts/application
+  Rendered password_resets/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 140ms (Views: 106.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/password_resets" for 127.0.0.1 at 2016-06-27 09:29:15 +0100
+Processing by PasswordResetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"swTJSr3CUgOx1CsB/1wN01vxfxzPfyJWtoUo/2Rc8pHn22d3UmoiJSLUfIIEwKGWH7y+PjiHK1iTHxToPO/7JQ==", "email"=>"rwv1002@yahoo.co.uk", "commit"=>"Reset Password"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'rwv1002@yahoo.co.uk' LIMIT 1[0m
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`password_reset_token` = 'lWodoE8G4eUSx5dZVqVq9Q' LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'rwv1002@yahoo.co.uk' AND (`users`.`id` != 3) LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE `users` SET `password_reset_token` = 'lWodoE8G4eUSx5dZVqVq9Q', `password_reset_sent_at` = '2016-06-27 08:29:15', `updated_at` = '2016-06-27 08:29:15' WHERE `users`.`id` = 3[0m
+  [1m[35m (103.6ms)[0m  [1m[35mCOMMIT[0m
+  Rendering user_mailer/password_reset.html.erb within layouts/mailer
+  Rendered user_mailer/password_reset.html.erb within layouts/mailer (1.0ms)
+  Rendering user_mailer/password_reset.text.erb within layouts/mailer
+  Rendered user_mailer/password_reset.text.erb within layouts/mailer (1.0ms)
+UserMailer#password_reset: processed outbound mail in 518.6ms
+Sent mail to rwv1002@yahoo.co.uk (2010.2ms)
+Date: Mon, 27 Jun 2016 09:29:16 +0100
+From: noreply@example.com
+To: rwv1002@yahoo.co.uk
+Message-ID: <5770e3dc3a919_28402f40b7044849@DESKTOP-O8Q7E0E.mail>
+Subject: Password Reset
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5770e3dc39964_28402f40b704476f";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5770e3dc39964_28402f40b704476f
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+To reset your password, click the URL below.
+
+http://localhost:3000/password_resets/lWodoE8G4eUSx5dZVqVq9Q/edit
+
+If you did not request your password to be reset, just ignore this email and your password will continue to stay the same.
+
+----==_mimepart_5770e3dc39964_28402f40b704476f
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>User#password_reset</h1>
+
+<p>
+  , find me in app/views/user_mailer/password_reset.html.erb
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_5770e3dc39964_28402f40b704476f--
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 2643ms (ActiveRecord: 105.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-27 09:29:18 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 142ms (Views: 109.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/password_resets/lWodoE8G4eUSx5dZVqVq9Q/edit" for 127.0.0.1 at 2016-06-27 09:30:30 +0100
+Processing by PasswordResetsController#edit as HTML
+  Parameters: {"id"=>"lWodoE8G4eUSx5dZVqVq9Q"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`password_reset_token` = 'lWodoE8G4eUSx5dZVqVq9Q' LIMIT 1[0m
+  Rendering password_resets/edit.html.erb within layouts/application
+  Rendered password_resets/edit.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 143ms (Views: 107.5ms | ActiveRecord: 2.0ms)
+
+
+Started PATCH "/password_resets/lWodoE8G4eUSx5dZVqVq9Q" for 127.0.0.1 at 2016-06-27 09:30:35 +0100
+Processing by PasswordResetsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Wycl6Z2nXpXQ5Qw0yWhtRez2v3pMsWzbN1J6u9kr26suM06uAgOl60BTqkTEG6PahC7DRgB2bP4iM6aSz9VsMw==", "user"=>{"password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Update Password", "id"=>"lWodoE8G4eUSx5dZVqVq9Q"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`password_reset_token` = 'lWodoE8G4eUSx5dZVqVq9Q' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'rwv1002@yahoo.co.uk' AND (`users`.`id` != 3) LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE `users` SET `password_digest` = '$2a$10$WiaLV3zvckCAsh3XRQK6ReIiUmNLmsjmqRRjtyKfo/UBkq./Nj8se', `updated_at` = '2016-06-27 08:30:35' WHERE `users`.`id` = 3[0m
+  [1m[35m (30.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 140ms (ActiveRecord: 33.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-27 09:30:35 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 142ms (Views: 107.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-06-27 09:30:41 +0100
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 139ms (Views: 105.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-06-27 09:30:44 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ywji+dKyhJA1MoI61cp7iMMY7c/dEzK8jEuRqqO5o+yGFxSdQTiHQy+iEITN3KTlGsy6cHDTVqGBIFHFrgmxOQ==", "email"=>"rwv1002@yahoo.co.uk", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'rwv1002@yahoo.co.uk' LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 103ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-27 09:30:44 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`auth_token` = '9uCldGyJduJZnxQFw0Siuw' LIMIT 1[0m
+Completed 200 OK in 147ms (Views: 111.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2016-06-27 09:30:46 +0100
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-27 09:30:46 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 139ms (Views: 104.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-06-27 09:30:48 +0100
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 136ms (Views: 103.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-06-27 09:30:50 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"58xZg6NhrVBGf2mSlIThFvXIHbVBAnEBYzuJKsB8QnKq06/nMOuug1zv+yyMkj57LBxKCuzCFRxuUElFzcxQpw==", "email"=>"rwv1002@yahoo.co.uk", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'rwv1002@yahoo.co.uk' LIMIT 1[0m
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 227ms (Views: 125.1ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-06-27 09:30:55 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CcplLFBHjsu2jXEAF4Nj3XOm93zbSR3H54be8rQq1ExE1ZNIw82NGKwd474PlbywqnKgw3aJedrq7R6duZrGmQ==", "email"=>"rwv1002@yahoo.co.uk", "password"=>"[FILTERED]", "remember_me"=>"1", "commit"=>"Log In"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'rwv1002@yahoo.co.uk' LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 104ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-27 09:30:56 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (4.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`auth_token` = '9uCldGyJduJZnxQFw0Siuw' LIMIT 1[0m
+Completed 200 OK in 154ms (Views: 115.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-27 09:31:13 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 140ms (Views: 105.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-27 09:31:41 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`auth_token` = '9uCldGyJduJZnxQFw0Siuw' LIMIT 1[0m
+Completed 200 OK in 145ms (Views: 108.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-27 10:54:59 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (87.1ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (27.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (123.1ms)
+Completed 200 OK in 559ms (Views: 365.3ms | ActiveRecord: 46.1ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-06-27 10:55:03 +0100
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 136ms (Views: 102.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2016-06-27 10:55:11 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"69WCBjc5hVnqR7H8DAhy5OeD1aJiwuHVKm52A0EqLSmeYgFZKgZhJbgsNNV0jAzIpx/5uwlEv0PpCaKXLYU/gA==", "email"=>"rwv1002@yahoo.co.uk", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'rwv1002@yahoo.co.uk' LIMIT 1[0m
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 298ms (Views: 108.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/password_resets/new" for 127.0.0.1 at 2016-06-27 10:55:14 +0100
+Processing by PasswordResetsController#new as HTML
+  Rendering password_resets/new.html.erb within layouts/application
+  Rendered password_resets/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 139ms (Views: 105.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/password_resets" for 127.0.0.1 at 2016-06-27 10:55:18 +0100
+Processing by PasswordResetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qRFaXbXQ3SOA1OZ07YCL2lOZC7iNb6LjwXwG8bE8EeL+rlGD9/cBBBl1k3+azlqoazGmZ2MJJrZ6TE1/LUBPtg==", "email"=>"rwv1002@yahoo.co.uk", "commit"=>"Reset Password"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'rwv1002@yahoo.co.uk' LIMIT 1[0m
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`password_reset_token` = 'tsq9v9LutExubG_wc5oaUw' LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'rwv1002@yahoo.co.uk' AND (`users`.`id` != 3) LIMIT 1[0m
+  [1m[35mSQL (17.0ms)[0m  [1m[33mUPDATE `users` SET `password_reset_token` = 'tsq9v9LutExubG_wc5oaUw', `password_reset_sent_at` = '2016-06-27 09:55:18', `updated_at` = '2016-06-27 09:55:18' WHERE `users`.`id` = 3[0m
+  [1m[35m (67.1ms)[0m  [1m[35mCOMMIT[0m
+  Rendering user_mailer/password_reset.html.erb within layouts/mailer
+  Rendered user_mailer/password_reset.html.erb within layouts/mailer (0.0ms)
+  Rendering user_mailer/password_reset.text.erb within layouts/mailer
+  Rendered user_mailer/password_reset.text.erb within layouts/mailer (1.0ms)
+UserMailer#password_reset: processed outbound mail in 825.1ms
+Sent mail to rwv1002@yahoo.co.uk (2037.3ms)
+Date: Mon, 27 Jun 2016 10:55:20 +0100
+From: noreply@example.com
+To: rwv1002@yahoo.co.uk
+Message-ID: <5770f8089c343_1eb82e20f548584@DESKTOP-O8Q7E0E.mail>
+Subject: Password Reset
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5770f80896d3b_1eb82e20f54857d3";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5770f80896d3b_1eb82e20f54857d3
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+To reset your password, click the URL below.
+
+http://localhost:3000/password_resets/tsq9v9LutExubG_wc5oaUw/edit
+
+If you did not request your password to be reset, just ignore this email and your password will continue to stay the same.
+
+----==_mimepart_5770f80896d3b_1eb82e20f54857d3
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>User#password_reset</h1>
+
+<p>
+  , find me in app/views/user_mailer/password_reset.html.erb
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_5770f80896d3b_1eb82e20f54857d3--
+
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 4270ms (ActiveRecord: 88.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-27 10:55:22 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (16.5ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 159ms (Views: 107.3ms | ActiveRecord: 16.5ms)
+
+
+Started GET "/password_resets/tsq9v9LutExubG_wc5oaUw/edit" for 127.0.0.1 at 2016-06-27 10:55:34 +0100
+Processing by PasswordResetsController#edit as HTML
+  Parameters: {"id"=>"tsq9v9LutExubG_wc5oaUw"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`password_reset_token` = 'tsq9v9LutExubG_wc5oaUw' LIMIT 1[0m
+  Rendering password_resets/edit.html.erb within layouts/application
+  Rendered password_resets/edit.html.erb within layouts/application (199.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`auth_token` = '9uCldGyJduJZnxQFw0Siuw' LIMIT 1[0m
+Completed 200 OK in 490ms (Views: 413.9ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/password_resets/tsq9v9LutExubG_wc5oaUw" for 127.0.0.1 at 2016-06-27 10:55:40 +0100
+Processing by PasswordResetsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fhBSubiSGozHUim/1GM8a4koSXGVd1UJFsJosL4aXmB5i5USsDtekMjyJPoQltcyZoYv8xIvCkJG+zyRzdDtwQ==", "user"=>{"password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Update Password", "id"=>"tsq9v9LutExubG_wc5oaUw"}
+  [1m[36mUser Load (16.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`password_reset_token` = 'tsq9v9LutExubG_wc5oaUw' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (19.0ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'rwv1002@yahoo.co.uk' AND (`users`.`id` != 3) LIMIT 1[0m
+  [1m[35mSQL (34.0ms)[0m  [1m[33mUPDATE `users` SET `password_digest` = '$2a$10$U2GgdD6VqDXR7o77vn.INOP.RZSVzfaLxZ4j8kLe8S36X7oyZBE7C', `updated_at` = '2016-06-27 09:55:40' WHERE `users`.`id` = 3[0m
+  [1m[35m (103.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 286ms (ActiveRecord: 172.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-27 10:55:40 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (4.0ms)
+  [1m[36mUser Load (12.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`auth_token` = '9uCldGyJduJZnxQFw0Siuw' LIMIT 1[0m
+Completed 200 OK in 291ms (Views: 188.4ms | ActiveRecord: 13.0ms)
+
+
